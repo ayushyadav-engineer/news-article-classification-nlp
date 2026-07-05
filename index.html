@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>News Classification Using NLP</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📰 AI News Classifier</h1>
+
+<p class="subtitle">
+Classify news articles using Natural Language Processing & Machine Learning
+</p>
+
+<form action="/predict" method="POST">
+
+<textarea
+name="news"
+placeholder="Paste your news article here..."
+required>
+</textarea>
+
+<br>
+
+<button type="submit">
+🚀 Predict Category
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h2>Predicted Category</h2>
+
+<div class="prediction">
+{{ prediction }}
+</div>
+
+</div>
+
+{% endif %}
+
+<div class="footer">
+Built with Python • NLP • Scikit-Learn • Flask
+</div>
+
+</div>
+
+</body>
+
+</html>
